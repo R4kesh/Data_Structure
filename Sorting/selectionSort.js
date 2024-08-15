@@ -5,7 +5,7 @@ function selectionSort(arr) {
         // Assume the minimum is the first element
         let minIndex = i;
 
-        // Find the minimum element in the unsorted part
+       
         for (let j = i + 1; j < n; j++) {
             if (arr[j] < arr[minIndex]) {
                 minIndex = j;
