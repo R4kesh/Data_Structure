@@ -30,7 +30,7 @@ class Node {
           }
         }
       }
-      // Big-O: O(n)
+      // Big-O : O(n)
 
       prepend(value) {
         const node = new Node(value);
@@ -40,7 +40,7 @@ class Node {
         this.head = node;
         this.size++;
       }
-      // Big-O: O(1)
+      // Big-O : O(1)
 
       append(value) {
         const node = new Node(value);
