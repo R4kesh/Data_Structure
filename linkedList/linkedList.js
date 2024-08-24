@@ -99,6 +99,48 @@ class Node {
     }
     // Big-O: O(n)
 
+    
+
+    isPalindrome() {
+      if (!this.head || !this.head.next) {
+        return true;
+      }
+  
+      let slow = this.head;
+      let fast = this.head;
+  
+      while (fast && fast.next) {
+        slow = slow.next;
+        fast = fast.next.next;
+      }
+  
+      let reversedSecondHalf = this.reverseLinkedList(slow);
+  
+      while (reversedSecondHalf) {
+        if (this.head.value !== reversedSecondHalf.value) {
+          return false;
+        }
+        this.head = this.head.next;
+        reversedSecondHalf = reversedSecondHalf.next;
+      }
+  
+      return true;
+    }
+  
+    reverseLinkedList(head) {
+      let prev = null;
+      let current = head;
+  
+      while (current) {
+        const nextNode = current.next;
+        current.next = prev;
+        prev = current;
+        current = nextNode;
+      }
+  
+      return prev;
+    }
+
 
     
 
