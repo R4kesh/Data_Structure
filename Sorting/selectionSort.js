@@ -12,7 +12,6 @@ function selectionSort(arr) {
             }
         }
 
-        // Swap the found minimum element with the first element
         if (minIndex !== i) {
             let temp = arr[i];
             arr[i] = arr[minIndex];
