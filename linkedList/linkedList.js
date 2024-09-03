@@ -81,22 +81,35 @@ class Node {
     //Delete node with value
 
     deleteNode(value) {
-        if(this.head.value === value) {
-            this.head = this.head.next;
-        } else {
-            let curr = this.head;
-            let deleteNo;
-            while(curr.next) {
-                if(curr.next.value === value) {
-                    deleteNo = curr.next;
-                    break;
-                }
-                curr = curr.next;
-            }
-            curr.next = deleteNo.next;
-        }
-        this.size--;
-    }
+      if (this.isEmpty()) {
+          console.log("List is empty");
+          return;
+      }
+  
+      // Case 1: Deleting the head node
+      if (this.head.value === value) {
+          this.head = this.head.next;
+          this.size--;
+          return;
+      }
+  
+      // Case 2: Deleting any other node
+      let curr = this.head;
+      let prev = null;
+  
+      while (curr) {
+          if (curr.value === value) {
+              prev.next = curr.next;
+              this.size--;
+              return;
+          }
+          prev = curr;
+          curr = curr.next;
+      }
+  
+      // If the value was not found
+      console.log("Value not found in the list");
+  }
     // Big-O: O(n)
 
     
